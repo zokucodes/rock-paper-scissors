@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
             playerTotalPoints++;
         } else if(computerSelection ==='rock') {
             result="You Lose! Rock beats Scissors";
-            computerTotalPoints;
+            computerTotalPoints++;
         } else {
             result='No one wins, You both picked Scissors ';
         } 
@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
             playerTotalPoints++;
         } else if(computerSelection ==='scissors') {
             result="You Lose! Scissors beats Paper";
-            computerTotalPoints;
+            computerTotalPoints++;
         } else {
             result='No one wins, You both picked Paper';
         }
@@ -43,34 +43,52 @@ function playRound(playerSelection, computerSelection) {
             playerTotalPoints++;
         } else if(computerSelection ==='paper') {
             result="You Lose! Paper beats rock";
-            computerTotalPoints;
+            computerTotalPoints++;
         } else {
             result='No one wins, You both picked Rock ';
         }
         
     }
+
+    
     return result;
 }
 
+function score() {
+    if (playerTotalPoints > computerTotalPoints ) {
+        console.log("You won the best of five!");
+    } else if (computerTotalPoints > playerTotalPoints) {
+        console.log("You lost the best of five!");
+    } else if (computerTotalPoints === playerTotalPoints) {
+        console.log("You are both tied, no one wins!");
+    }
+ 
+}
 
 function game() {
 
+    
     for(let i = 0; i < 5; i++) {
         let computerSelection = getComputerChoice();
         let playerSelection = prompt("Please choose and enter either Rock, Paper or Scissors").toLowerCase();
         
-        let singleRound = console.log(playRound(playerSelection, computerSelection));
-
-        if (playerTotalPoints >= 5 && computerTotalPoints < 5) {
-            console.log("You win the best of five!");
-        } else if (computerTotalPoints >= 5 && playerTotalPoints < 5) {
-            console.log("You lost the best of five!");
-        } 
+        console.log(playRound(playerSelection, computerSelection));
     }
+    // if (i===5) {
+    //     if (playerTotalPoints === 5 && computerTotalPoints < 5) {
+    //         console.log("You win the best of five!");
+    //     } else if (computerTotalPoints === 5 && playerTotalPoints < 5) {
+    //         console.log("You lost the best of five!");
+    //     } 
+    // }
+
+
     
 }
 
-console.log(game());
+
+game();
+score();
 
 
 
