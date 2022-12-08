@@ -74,13 +74,6 @@ function game() {
         
         console.log(playRound(playerSelection, computerSelection));
     }
-    // if (i===5) {
-    //     if (playerTotalPoints === 5 && computerTotalPoints < 5) {
-    //         console.log("You win the best of five!");
-    //     } else if (computerTotalPoints === 5 && playerTotalPoints < 5) {
-    //         console.log("You lost the best of five!");
-    //     } 
-    // }
 
 
     
