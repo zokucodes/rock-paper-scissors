@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="main.js"></script>
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    
+    <h2 class="heading">Rock, Paper, & Scissors VS a Computer (Best of Five)</h2>
+    <div class="container">
+      <div class="points"> 
+        <div class="player-points">0</div>
+        <div class="dash">-</div>
+        <div class="computer-points">0</div>
+      </div>
+      <div class="message"></div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-image" data-image="rock">
+            <img src="images/rock.png" alt="Rock" class="image" />
+          </div>
+          <div class="card-name">Rock</div>
+        </div>
+        <div class="card">
+          <div class="card-image" data-image="paper">
+            <img src="images/paper.png" alt="Paper" class="image" />
+          </div>
+          <div class="card-name">Paper</div>
+        </div>
+        <div class="card">
+          <div class="card-image" data-image="scissors">
+            <img src="images/scissors.png" alt="Scissors" class="image" />
+          </div>
+          <div class="card-name">Scissors</div>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

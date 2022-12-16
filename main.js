@@ -1,3 +1,8 @@
+const resultMessage = document.querySelector('.message');
+const scorePlayer = document.querySelector('.player-points');
+const scoreComputer = document.querySelector('.computer-points');
+const images = Array.from(document.querySelectorAll('.card-image'));
+
 let playerTotalPoints = 0;
 let computerTotalPoints = 0;
 
@@ -49,8 +54,6 @@ function playRound(playerSelection, computerSelection) {
         }
         
     }
-
-    
     return result;
 }
 
@@ -65,18 +68,43 @@ function score() {
  
 }
 
-function game() {
-    for(let i = 0; i < 5; i++) {
-        let computerSelection = getComputerChoice();
-        let playerSelection = prompt("Please choose and enter either Rock, Paper or Scissors").toLowerCase();
+// function oldgame() {
+//     for(let i = 0; i < 5; i++) {
+//         let computerSelection = getComputerChoice();
+//         let playerSelection = prompt("Please choose and enter either Rock, Paper or Scissors").toLowerCase();
         
-        console.log(playRound(playerSelection, computerSelection));
+//         console.log(playRound(playerSelection, computerSelection));
+//     }
+// }
+
+function game(playerChoice) {
+    let computerSelection = getComputerChoice();
+    let playerSelection = playerChoice;
+    let roundResult = playRound(playerSelection, computerSelection);
+    
+    scorePlayer.textContent = playerTotalPoints;
+    scoreComputer.textContent = computerTotalPoints;
+    resultMessage.textContent = roundResult;
+
+    if (playerTotalPoints >= 5 && computerTotalPoints < 5) {
+      resultMessage.textContent = 'You win the best of five!';
+    } else if (computerTotalPoints >= 5 && playerTotalPoints < 5) {
+      resultMessage.textContent = 'You lose the best of five!';
     }
-}
+  }
+  //Makes the user start game by pressing image 
+  images.forEach((image) =>
+    image.addEventListener('click', () => {
+        if (playerTotalPoints>= 5 || computerTotalPoints>= 5) {
+        return;
+        }
+        game(image.dataset.image);
+    })
+    );
+
+ 
 
 
-game();
-score();
 
 
 
