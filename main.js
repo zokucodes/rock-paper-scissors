@@ -66,17 +66,12 @@ function score() {
 }
 
 function game() {
-
-    
     for(let i = 0; i < 5; i++) {
         let computerSelection = getComputerChoice();
         let playerSelection = prompt("Please choose and enter either Rock, Paper or Scissors").toLowerCase();
         
         console.log(playRound(playerSelection, computerSelection));
     }
-
-
-    
 }
 
 
